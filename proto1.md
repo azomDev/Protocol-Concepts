@@ -4,9 +4,9 @@
 
 1. **One-Time Token**: A cryptographically random value is created to serve as the token. (does not have to be a nonce because in the very rare case of a collision, the server will simply reject the request).
 
-3. **Sign Data**: The **request body**, **timestamp**, **token**, and **user ID** are signed using the client’s private key, preventing tampering.
+2. **Sign Data**: The **request body**, **timestamp**, **token**, and **user ID** are signed using the client’s private key, preventing tampering.
 
-4. **Transmit to Server**: The client sends the **signed request body**, along with the **token**, **timestamp**, and **user ID**, to the server.
+3. **Transmit to Server**: The client sends the **signed request body**, along with the **token**, **timestamp**, and **user ID**, to the server.
 
 ## **2. Server Side**
 
