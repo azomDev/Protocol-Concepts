@@ -8,11 +8,13 @@
 
 1. **Receive Request**: The server receives the **user ID** on the **challenge endpoint**.
 
-2. **Generate Challenge**: The server generates a **challenge** containing a **random nonce** and the **current server timestamp**.
+2. **Check User**: The server checks if the **user ID** exists in the database.
 
-3. **Store Challenge**: The server stores the **challenge** in a **short-term memory database (STMD)** with the **user ID** as the key.
+3. **Generate Challenge**: The server generates a **challenge** containing a **random nonce** and the **current server timestamp**.
 
-4. **Send Challenge**: The server sends the **challenge** to the client.
+4. **Store Challenge**: The server stores the **challenge** in a **short-term memory database (STMD)** with the **user ID** as the key.
+
+5. **Send Challenge**: The server sends the **challenge** to the client.
 
 ## **3. Client Side**
 
@@ -38,16 +40,13 @@
 
 6. **Authorization**: If the **signature** is valid, the server **accepts the request**, processes it, and sends a response back to the client.
 
-todo challenge cleanup???
-
-
 ---
+
+### **Optional**
+- **Challenge Cleanup**: If the **challenge** is not used after a certain time, it can be removed from the **STMD** for an additional layer of privacy.
 
 ### **Assumptions**
 - The **server** and **client** are **not compromised**.
 
 ### **Definitions**
 - Let **X** be the number of seconds a request is valid for.
-
-
-problem: someone without account can spam the challenge endpoint
