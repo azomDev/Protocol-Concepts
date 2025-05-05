@@ -26,6 +26,7 @@
 
 ### **Assumptions**
 - The **server** and **client** are **not compromised**.
+- TODO: assumption about time sync between client and server (depending on approx, > or <, it can either be good to use, not working or unsafe)
 
 ### **Definitions**
 - Let **X** be the number of seconds a request is valid for.
